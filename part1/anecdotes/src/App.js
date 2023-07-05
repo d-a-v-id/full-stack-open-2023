@@ -22,14 +22,13 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
   const [voted, setVoted] = useState(new Array(8).fill(0))
+  const iMax = voted.indexOf(Math.max(...voted))
 
   const updateVotes = () => {
     const voteCopy = [...voted]
     voteCopy[selected] += 1
     setVoted(voteCopy)
   }
-  const max = Math.max(...voted)
-  const iMax = voted.indexOf(max)
 
   return (
     <div>
